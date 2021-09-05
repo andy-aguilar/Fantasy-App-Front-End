@@ -1,18 +1,13 @@
 import React from "react"
 import './App.css';
 
-import ESPNLogin from "./components/ESPNLogin";
+import Home from "./components/home/Home"
 
 function App() {
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault()
-  //   socket.emit("code", code)
-  // }
-
   return (
     <div className="App">
-      <ESPNLogin />
+      <Home />
     </div>
   );
 }

@@ -1,0 +1,17 @@
+.Home-header {
+    height: 67px;
+    background-color: #027F9C;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.spacer {
+    height: 67px;
+}
+
+main {
+    height: 100%;
+    background-image: url("../../images/ltDunk.jpeg");
+}
