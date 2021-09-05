@@ -10,8 +10,7 @@ let socket
 export default function ESPNLogin() {
 
     const [message, setMessage] = useState("Process Starting...");
-    const [displayForm, setDisplayForm] = useState(false)
-    const [code, setCode] = useState("");
+    const [displayForm, setDisplayForm] = useState(true)
 
     useEffect(() => {
         socket = socketIOClient(ENDPOINT, {
@@ -24,14 +23,18 @@ export default function ESPNLogin() {
 
         socket.on("readyForLogin", () => setDisplayForm(true))
 
+        socket.on("error", (msg) => {
+            setMessage(msg)
+            setDisplayForm(false)
+            socket.disconnect()
+        })
+
         socket.on("message", setMessage)
         return () => socket.disconnect();
     }, []);
 
-    const handleLoginSubmit = (e) => {
-        e.preventDefault()
-        console.log("Email:", e.target.email.value)
-        console.log("Password:", e.target.password.value)
+    const handleLoginSubmit = (dataObj) => {
+        socket.emit("login", dataObj)
     }
 
 
