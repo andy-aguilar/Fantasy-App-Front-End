@@ -3,6 +3,7 @@ import './home.css'
 import Button from '@material-ui/core/Button';
 import logo from '../../images/LS.png'
 import logoSecondary from "../../images/LSSecondary.png"
+import LoginContainer from '../../containers/login/LoginContainer';
 
 export default function Home() {
     const [login, setLogin] = useState(true)
@@ -20,9 +21,8 @@ export default function Home() {
                 
                 </nav>
             </header>
-            <div className="spacer"></div>
-            <main>
-
+            <main className={login ? "" : "signup"}>
+                <LoginContainer login={login} />
             </main>
         </div>
     )
