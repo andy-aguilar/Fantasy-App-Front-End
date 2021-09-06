@@ -11,3 +11,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: "Norwester";
+  src: local("Norwester"),
+  url("./fonts/norwester.ttf") format("truetype");
+  
+  }
